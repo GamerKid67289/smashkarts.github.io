@@ -107,7 +107,7 @@
   </style>
 
   <style>
-        body {
+         body {
             margin: 0;
             padding: 0;
             overflow: hidden;
@@ -130,9 +130,9 @@
     <canvas id="canvas"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
    <script>
-       var canvas = document.getElementById('canvas');
+         var canvas = document.getElementById('canvas');
 
-for (var i = 0; i < 5; i++) {
+function createConfetti() {
     confetti({
         particleCount: 100,
         colors: ['#000000'],
@@ -151,7 +151,11 @@ for (var i = 0; i < 5; i++) {
             }
         }
     })(canvas);
+
+    setTimeout(createConfetti, 1000);
 }
+
+createConfetti();
     </script>
 
   Get ready for an adrenaline-fueled, pixelated karting experience like never before with SmashKarts.io! Race against players from around the world in this action-packed multiplayer game that combines fast-paced racing with chaotic battles. Welcome To the Smash Karts.io github site.
