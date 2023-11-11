@@ -106,31 +106,49 @@
 
   </style>
 
+  <style>
+    .confetti {
+      position: absolute;
+      top: random(100vh);
+      left: random(100vw);
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      animation: fall 5s linear infinite;
+    }
+
+    .blue-confetti {
+      position: absolute;
+      top: random(100vh);
+      left: random(100vw);
+      width: 10px;
+      height: 10px;
+      background-color: blue;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      from {
+        top: 0;
+        transform: rotate(0deg);
+      }
+      to {
+        top: 100%;
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <script>
-    function createConfetti(colors) {
-      const confettiCount = 100;
-      
-      for (let i = 0; i < confettiCount; i++) {
-        confetti({
-          particleCount: 1,
-          startVelocity: 30,
-          spread: 360,
-          ticks: 300,
-          colors: colors,
-          origin: { x: Math.random(), y: Math.random() - 0.2 }
-        });
-      }
-    }
-  
-    createConfetti(['#FF0000', '#FF4500', '#FF6347']); // Red confetti
-    setTimeout(function() {
-      createConfetti(['#0000FF', '#4169E1', '#6495ED']); // Blue confetti
-    }, 2000);
-  </script>
+  <div id="confetti-container">
+    <div class="confetti"></div>
+    <div class="blue-confetti"></div>
+    <div class="confetti"></div>
+    <div class="blue-confetti"></div>
+  </div>
   Get ready for an adrenaline-fueled, pixelated karting experience like never before with SmashKarts.io! Race against players from around the world in this action-packed multiplayer game that combines fast-paced racing with chaotic battles. Welcome To the Smash Karts.io github site.
 <center>
 
