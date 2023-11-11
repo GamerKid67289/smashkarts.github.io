@@ -139,7 +139,23 @@
       }
     }
   </style>
+<script>
+function spawnConfetti() {
+  var confettiContainer = document.getElementById('confetti-container');
 
+  for (var i = 0; i < 10; i++) {
+    var confettiPiece = document.createElement('div');
+    confettiPiece.classList.add('confetti');
+    confettiPiece.style.top = random(100vh) + 'px';
+    confettiPiece.style.left = random(100vw) + 'px';
+
+    confettiContainer.appendChild(confettiPiece);
+  }
+}
+
+window.onload = spawnConfetti;
+
+  </script>
 </head>
 
 <body>
