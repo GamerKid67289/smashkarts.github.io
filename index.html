@@ -106,56 +106,69 @@
 
   </style>
 
-  <style>
-         body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #f0f0f0;
-        }
 
-        #canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-    </style>
  
 </head>
 
 <body>
     <canvas id="canvas"></canvas>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
    <script>
-         var canvas = document.getElementById('canvas');
+        function confettiAnimation() {
+  // Create a canvas element
+  var canvas = document.createElement('canvas');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  document.body.appendChild(canvas);
 
-function createConfetti() {
-    confetti({
-        particleCount: 100,
-        colors: ['#000000'],
-        size: {
-            min: 2,
-            max: 10
-        },
-        speed: {
-            min: 0.1,
-            max: 0.5
-        },
-        direction: {
-            angle: {
-                min: 0,
-                max: 360
-            }
-        }
-    })(canvas);
+  // Get the context of the canvas
+  var ctx = canvas.getContext('2d');
 
-    setTimeout(createConfetti, 1000);
+  // Create an array of confetti particles
+  var particles = [];
+
+  // Define the properties of a confetti particle
+  function Particle() {
+    this.x = Math.random() * window.innerWidth;
+    this.y = Math.random() * window.innerHeight;
+    this.size = Math.random() * 10 + 5;
+    this.speedX = Math.random() * 2 - 1;
+    this.speedY = Math.random() * 5 + 1;
+    this.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  }
+
+  // Create 100 confetti particles
+  for (var i = 0; i < 100; i++) {
+    particles.push(new Particle());
+  }
+
+  // Draw the confetti particles
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (var i = 0; i < particles.length; i++) {
+      var particle = particles[i];
+
+      ctx.beginPath();
+      ctx.fillStyle = particle.color;
+      ctx.arc(particle.x, particle.y, particle.size, 0, 2 * Math.PI);
+      ctx.fill();
+
+      particle.x += particle.speedX;
+      particle.y += particle.speedY;
+
+      if (particle.y > window.innerHeight) {
+        particle.y = 0;
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  // Start the confetti animation
+  draw();
 }
 
-createConfetti();
+confettiAnimation();
     </script>
 
   Get ready for an adrenaline-fueled, pixelated karting experience like never before with SmashKarts.io! Race against players from around the world in this action-packed multiplayer game that combines fast-paced racing with chaotic battles. Welcome To the Smash Karts.io github site.
