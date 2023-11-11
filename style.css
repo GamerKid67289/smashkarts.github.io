@@ -8,3 +8,6 @@ body {
     color: #000000; /* Set text color to white or a contrasting color */
   }
   
+  .highlight {
+    background-color: blue; /* You can customize the color */
+}
