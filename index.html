@@ -108,24 +108,25 @@
 
   <style>
     .confetti {
-      position: absolute;
-      top: random(100vh);
-      left: random(100vw);
-      width: 10px;
-      height: 10px;
-      background-color: red;
-      animation: fall 5s linear infinite;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  animation: fall 5s linear infinite;
+}
 
-    .blue-confetti {
-      position: absolute;
-      top: random(100vh);
-      left: random(100vw);
-      width: 10px;
-      height: 10px;
-      background-color: blue;
-      animation: fall 5s linear infinite;
-    }
+.blue-confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 255, 0.3);
+  animation: fall 5s linear infinite;
+}
+
 
     @keyframes fall {
       from {
