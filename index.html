@@ -110,6 +110,27 @@
 
 <body>
 
+  <script>
+    function createConfetti(colors) {
+      const confettiCount = 100;
+      
+      for (let i = 0; i < confettiCount; i++) {
+        confetti({
+          particleCount: 1,
+          startVelocity: 30,
+          spread: 360,
+          ticks: 300,
+          colors: colors,
+          origin: { x: Math.random(), y: Math.random() - 0.2 }
+        });
+      }
+    }
+  
+    createConfetti(['#FF0000', '#FF4500', '#FF6347']); // Red confetti
+    setTimeout(function() {
+      createConfetti(['#0000FF', '#4169E1', '#6495ED']); // Blue confetti
+    }, 2000);
+  </script>
 
 <center>
 
