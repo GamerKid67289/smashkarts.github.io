@@ -106,56 +106,7 @@
 
   </style>
 
-  <style>
-    .confetti {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.3);
-  animation: fall 5s linear infinite;
-}
-
-.blue-confetti {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 0, 255, 0.3);
-  animation: fall 5s linear infinite;
-}
-
-
-    @keyframes fall {
-      from {
-        top: 0;
-        transform: rotate(0deg);
-      }
-      to {
-        top: 100%;
-        transform: rotate(360deg);
-      }
-    }
-  </style>
-<script>
-function spawnConfetti() {
-  var confettiContainer = document.getElementById('confetti-container');
-
-  for (var i = 0; i < 10; i++) {
-    var confettiPiece = document.createElement('div');
-    confettiPiece.classList.add('confetti');
-    confettiPiece.style.top = random(100vh) + 'px';
-    confettiPiece.style.left = random(100vw) + 'px';
-
-    confettiContainer.appendChild(confettiPiece);
-  }
-}
-
-window.onload = spawnConfetti;
-
-  </script>
+ 
 </head>
 
 <body>
