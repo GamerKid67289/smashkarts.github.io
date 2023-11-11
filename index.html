@@ -62,24 +62,6 @@
       display: block;
     }
   </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const imageContainer = document.querySelector('.image-container');
-          const confettiSettings = {
-              target: 'overlay',
-              max: 100,
-              size: 15,
-              animate: true,
-              props: ['square', 'triangle', 'line'],
-              colors: [[255,0,0], [0,0,255]],
-              clock: 1
-          };
-
-          imageContainer.addEventListener('mouseover', function () {
-              confetti(confettiSettings);
-          });
-      });
-  </script>
 </head>
 <body>
   <center>
